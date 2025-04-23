@@ -1,0 +1,20 @@
+package br.edu.ifba.inf011.solid;
+
+import java.math.BigDecimal;
+
+public class Promotor{
+	
+	public void promover(Contratado funcionario) throws DomainException {
+		Cargo cargo = funcionario.getCargo();
+		Cargo novoCargo = cargo.next();
+		funcionario.setCargo(novoCargo);
+	}
+	
+	public void promover(Contratado funcionario) throws DomainException {
+		Cargo cargo = funcionario.getCargo();
+		Cargo novoCargo = cargo.next();
+		funcionario.setCargo(novoCargo);
+	}	
+	
+
+}

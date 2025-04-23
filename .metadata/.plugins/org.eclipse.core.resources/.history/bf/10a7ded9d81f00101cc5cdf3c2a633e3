@@ -1,0 +1,39 @@
+package br.edu.ifba.inf011.solid;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CalculadoraRegras {
+	
+	private List<Regra> regras;
+	
+	
+	public CalculadoraRegras() {
+		this.regras = new ArrayList<Regra>();
+	}
+	
+	public CalculadoraRegras(List<Regra> regras) {
+		this();
+		this.regras.addAll(this.regras);
+	}
+	
+	public void adicionarRegra(Regra regra) {
+		this.regras.add(regra);
+	}
+	
+	
+	
+	public void aumentarSalario(Contratado funcionario, 
+								BigDecimal pctAumento) throws DomainException {
+		
+		for(Regra regra : this.regras)
+			regra.ok(funcionario, pctAumento);
+		BigDecimal salarioAtual = funcionario.getSalario();	
+		BigDecimal aumento = salarioAtual.multiply(pctAumento);
+		BigDecimal novoSalario = salarioAtual.add(aumento);
+		funcionario.aumentarSalario(novoSalario);
+	}
+	
+
+}

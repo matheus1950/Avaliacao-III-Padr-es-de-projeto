@@ -1,0 +1,24 @@
+package br.edu.ifba.inf011.solid.regras;
+
+import java.math.BigDecimal;
+
+import br.edu.ifba.inf011.solid.Aumentavel;
+import br.edu.ifba.inf011.solid.Cargo;
+import br.edu.ifba.inf011.solid.DomainException;
+import br.edu.ifba.inf011.solid.Regra;
+
+public class RegraTetoCargo implements Regra{
+
+	@Override
+	public void ok(Aumentavel funcionario, BigDecimal percentual) throws DomainException {
+		Cargo cargo = funcionario.getCargo();
+		BigDecimal tetoSalarial = cargo.getTetoSalarial();
+		BigDecimal salarioAtual = funcionario.getSalario();	
+		BigDecimal aumento = salarioAtual.multiply(percentual);
+		BigDecimal novoSalario = salarioAtual.add(aumento);
+		if(novoSalario.compareTo(tetoSalarial) > 0)
+			throw new DomainException("Estoura o teto");
+
+	}
+
+}

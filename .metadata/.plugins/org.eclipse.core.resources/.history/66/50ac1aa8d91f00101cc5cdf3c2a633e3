@@ -1,0 +1,42 @@
+package br.edu.ifba.inf011.solid;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+public class Funcionario implements Aumentavel, Promovivel{
+	
+	private DadosCadastrais data;
+
+	public Funcionario(String matricula, String nome, BigDecimal salario, Cargo cargo,
+					   LocalDate dtAdmissao) {
+		super();
+		this.data  = new DadosCadastrais(matricula, nome,
+										 salario, cargo, dtAdmissao);
+	}
+	
+	public void aumentarSalario(BigDecimal novoSalario){
+		this.data.setSalario(novoSalario);
+		this.data.setDtUltimoReajuste(LocalDate.now());
+	}
+
+	public String toString() {
+		return this.data.toString();
+ 	}
+
+	public LocalDate getDtAdmissao() {
+		return this.data.getDtAdmissao();
+	}
+
+	public Cargo getCargo() {
+		return this.data.getCargo();
+	}
+
+	public BigDecimal getSalario() {
+		return  this.data.getSalario();
+	}
+
+	public void setCargo(Cargo novoCargo) {
+		this.data.setCargo(novoCargo);
+	}
+
+}

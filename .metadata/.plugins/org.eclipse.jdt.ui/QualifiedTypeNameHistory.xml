@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="br.ifba.edu.PessoaFisica"/>
+    <fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
+    <fullyQualifiedTypeName name="java.text.DateFormat"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+    <fullyQualifiedTypeName name="java.lang.classfile.TypeAnnotation.ThrowsTarget"/>
+    <fullyQualifiedTypeName name="br.edu.ifba.inf011.solid.CalculadoraSalarial"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="br.edu.ifba.inf011.solid.Regra"/>
+    <fullyQualifiedTypeName name="br.edu.ifba.inf011.solid.CalculadoraRegras"/>
+    <fullyQualifiedTypeName name="br.edu.ifba.inf011.solid.regras.RegraPercentualMatriz"/>
+    <fullyQualifiedTypeName name="br.edu.ifba.inf011.solid.regras.RegraTetoCargo"/>
+    <fullyQualifiedTypeName name="java.lang.UnsupportedOperationException"/>
+    <fullyQualifiedTypeName name="br.edu.ifba.inf011.solid.Retangulo"/>
+    <fullyQualifiedTypeName name="br.edu.ifba.inf011.solid.FuncionarioTerceirizado"/>
+</qualifiedTypeNameHistroy>
