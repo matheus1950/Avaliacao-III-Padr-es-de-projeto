@@ -10,7 +10,6 @@ import javax.swing.SwingUtilities;
 import br.ifba.ads.inf011.framework.ButtonTool;
 import br.ifba.ads.inf011.framework.GraphicEditor;
 import br.ifba.ads.inf011.framework.tool.EraseTool;
-import br.ifba.ads.inf011.framework.tool.GraphicTool;
 
 public class GraphicFigure extends GraphicEditor{
 	
@@ -23,9 +22,19 @@ public class GraphicFigure extends GraphicEditor{
     	btn.addActionListener(e -> ferramentaSelecionada = btn);
     	buttons.add(btn);
     	
-    	ButtonTool btn2 = new GraphicTool(this.graphics);
+    	ButtonTool btn2 = new GraphicTool("Circulo", this.graphics, new GraphicOval());
     	btn2.addActionListener(e -> ferramentaSelecionada = btn2);
     	buttons.add(btn2);
+    	
+    	ButtonTool btn3 = new GraphicTool("OI", this.graphics, new GraphicHello());
+    	btn3.addActionListener(e -> ferramentaSelecionada = btn3);
+    	buttons.add(btn3);
+    	
+    	ButtonTool btn5 = new GraphicTool("Retangulo", this.graphics, new GraphicRetangulo());
+    	btn5.addActionListener(e -> ferramentaSelecionada = btn5);
+    	buttons.add(btn5);
+    	    	
+    	
     	
     	JButton btn4 = new JButton("Cor");
         btn4.addActionListener(e -> {
