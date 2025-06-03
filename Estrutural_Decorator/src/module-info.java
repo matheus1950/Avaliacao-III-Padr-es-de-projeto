@@ -4,6 +4,6 @@
 /**
  * 
  */
-module Estrutural_Adapter {
+module Estrutural_Decorator {
 	requires java.desktop;
 }

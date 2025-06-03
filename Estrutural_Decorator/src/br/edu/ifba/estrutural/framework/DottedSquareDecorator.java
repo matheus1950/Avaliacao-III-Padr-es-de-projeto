@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 
-public class DottedSquareDecorator extends AbstractShapeBaseDecorator implements ShapeDecorator {
+public class DottedSquareDecorator extends AbstractShapeBaseDecorator implements Shape {
 
 
     public DottedSquareDecorator(Shape shape) {
@@ -29,9 +29,11 @@ public class DottedSquareDecorator extends AbstractShapeBaseDecorator implements
     }
     
     
-    public int getSize() {
-    	return super.getSize() + 10;
-    }
+	@Override
+	public int getSize() {
+		return super.getSize() + 10;
+	}
+
 
     @Override
     public Shape clone() {

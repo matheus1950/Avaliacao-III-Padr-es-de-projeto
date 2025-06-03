@@ -2,7 +2,7 @@ package br.edu.ifba.estrutural.framework;
 
 import java.awt.Graphics;
 
-public abstract class AbstractShapeBaseDecorator implements ShapeDecorator{
+public abstract class AbstractShapeBaseDecorator implements Shape{
 	
 	protected Shape shape; 
 
@@ -32,7 +32,7 @@ public abstract class AbstractShapeBaseDecorator implements ShapeDecorator{
 
 	@Override
 	public int getSize() {
-		return shape.getSize() + 10;
+		return shape.getSize();
 	}
 
 	@Override

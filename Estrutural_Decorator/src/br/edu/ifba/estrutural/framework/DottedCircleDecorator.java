@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 
-public class DottedCircleDecorator extends AbstractShapeBaseDecorator implements ShapeDecorator {
+public class DottedCircleDecorator extends AbstractShapeBaseDecorator implements Shape {
 
 
     public DottedCircleDecorator(Shape shape) {
@@ -28,14 +28,15 @@ public class DottedCircleDecorator extends AbstractShapeBaseDecorator implements
         return g2d;
     }
     
-    
-    public int getSize() {
-    	return super.getSize() + 10;
-    }
+	@Override
+	public int getSize() {
+		return super.getSize() + 10;
+	}
+
 
     @Override
     public Shape clone() {
-        return new DottedCircleDecorator(shape.clone()); // Clona o decorator e a forma interna
+        return new DottedCircleDecorator(shape.clone());
     }
 
 
