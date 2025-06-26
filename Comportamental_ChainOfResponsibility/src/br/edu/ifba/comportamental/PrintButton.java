@@ -10,12 +10,17 @@ public class PrintButton extends HelpHandler {
 
     @Override
     public void handleHelp(Integer id) {
-        if (canHandleHelp(id)) {
-            System.out.println("Ajuda específica para o botão Print.");
+        if (this.canHandleHelp(id)) {
+            this.showHelp();
         } else {
             super.handleHelp(id); 
         }
     }
+    
+    @Override
+    protected void showHelp() {
+    	System.out.println("Ajuda específica para o botão Print.");  	
+    };      
 
     @Override
     public boolean canHandleHelp(Integer id) {

@@ -9,12 +9,18 @@ public class PrintDialog extends HelpHandler {
 
     @Override
     public void handleHelp(Integer id) {
-        if (canHandleHelp(id)) {
-            System.out.println("Ajuda específica para a caixa de diálogo Print.");
+        if (this.canHandleHelp(id)) {
+            this.showHelp();
         } else {
             super.handleHelp(id); 
         }
     }
+
+    
+    @Override
+    protected void showHelp() {
+    	System.out.println("Ajuda específica para a caixa de diálogo Print.");    	
+    };    
 
     @Override
     public boolean canHandleHelp(Integer id) {

@@ -9,12 +9,17 @@ public class Application extends HelpHandler {
 
     @Override
     public void handleHelp(Integer id) {
-        if (canHandleHelp(id)) {
-            System.out.println("Ajuda específica da aplicação.");
+        if (this.canHandleHelp(id)) {
+            this.showHelp();
         } else {
             super.handleHelp(id); 
         }
     }
+
+    @Override
+    protected void showHelp() {
+        System.out.println("Ajuda específica da aplicação.");	
+    };      
 
     @Override
     public boolean canHandleHelp(Integer id) {

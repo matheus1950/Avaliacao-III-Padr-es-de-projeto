@@ -9,12 +9,13 @@ public abstract class HelpHandler {
 
     public void handleHelp(Integer id) {
         if (successor != null)
-            successor.handleHelp(id); // Repassa a solicitação para o sucessor.
+            successor.handleHelp(id);
         else
         	System.out.println("Ajuda genérica...");
     }
 
-    public HelpHandler getSuccessor() {
+
+	public HelpHandler getSuccessor() {
         return successor;
     }
 
@@ -22,5 +23,6 @@ public abstract class HelpHandler {
         this.successor = successor;
     }
 
-    public abstract boolean canHandleHelp(Integer id);
+    protected abstract boolean canHandleHelp(Integer id);
+    protected abstract void showHelp();
 }
