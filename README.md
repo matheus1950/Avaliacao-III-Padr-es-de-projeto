@@ -14,20 +14,13 @@ Permite que o objeto `BoletimProva` altere seu comportamento de acordo com o **e
 
 ---
 
-## 🏗️ Estrutura Adotada
+## 🆔 Identificação das Classes e Papéis
 
-### Interface Base
-EstadoBoletim
- 
-### Classe Contexto
-BoletimProva 
-
-### Estados Concretos
-Estados implementam comportamentos válidos conforme a fase:
-- `PreProva`
-- `MomentoDaLargada`
-- `Pista`
-- `PosProva`
+| Classe                  | Papel no padrão State       |
+|-------------------------|-----------------------------|
+| `EstadoBoletim`         | Interface de Estado         |
+| `BoletimProva`          | Contexto                    |
+| `PreProva`, `Pista`, `PosProva`, `MomentoDaLargada` | Estados Concretos |
 
 ---
 
@@ -48,16 +41,6 @@ Estados implementam comportamentos válidos conforme a fase:
 - O padrão **State** permite isolar comportamentos de cada fase.
 - Reduz a complexidade condicional na classe `BoletimProva`.
 - Possibilita adicionar novos estados ou transições sem alterar o código existente (extensibilidade).
-
----
-
-## 🆔 Identificação das Classes e Papéis
-
-| Classe                  | Papel no padrão State       |
-|-------------------------|-----------------------------|
-| `EstadoBoletim`         | Interface de Estado         |
-| `BoletimProva`          | Contexto                    |
-| `PreProva`, `Pista`, `PosProva`, `MomentoDaLargada` | Estados Concretos |
 
 ---
 
