@@ -41,8 +41,3 @@ Permite que o objeto `BoletimProva` altere seu comportamento de acordo com o **e
 - O padrão **State** permite isolar comportamentos de cada fase.
 - Reduz a complexidade condicional na classe `BoletimProva`.
 - Possibilita adicionar novos estados ou transições sem alterar o código existente (extensibilidade).
-
----
-
-## ✅ Conclusão
-A refatoração resolve corretamente o problema apresentado na Questão 1, atendendo todos os requisitos funcionais e aplicando o padrão de projeto de forma adequada. A transição entre estados é encapsulada e controlada, mantendo a integridade das regras de negócio para cada fase do boletim.
