@@ -1,5 +1,0 @@
-package br.edu.ifba.inf011.solid;
-
-public interface Aumentavel {
-
-}

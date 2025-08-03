@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module Criacional_AbstractFactory {
-}
