@@ -1,13 +1,6 @@
 
 # Análise da Questão 1 — Avaliação III (Padrões de Projeto)
 
-## ✅ Requisito da Questão
-O sistema deve implementar a lógica do ciclo de vida do objeto `BoletimProva`, que possui quatro fases:
-1. **Pré-Prova**: não pode registrar largada, chegada nem passagens.
-2. **Momento da Largada**: pode registrar atraso. Não pode registrar chegada nem passagens.
-3. **Pista**: pode registrar atraso, passagens e chegada.
-4. **Pós-Prova**: não pode registrar passagem nem chegada, mas ainda pode consultar atraso.
-
 ## 🎯 Objetivo da Refatoração
 Eliminar `if` encadeados e garantir:
 - Encapsulamento da lógica de estados.
@@ -24,42 +17,14 @@ Permite que o objeto `BoletimProva` altere seu comportamento de acordo com o **e
 ## 🏗️ Estrutura Adotada
 
 ### Interface Base
-```java
-public interface EstadoBoletim {
-    void apresentarParaLargada();
-    void registrarLargada();
-    void registrarPassagem(int prisma, Duration tempo);
-    void registrarChegada(Duration tempo);
-    void registrarAtraso(long minutoPartidaEfetivo);
-}
-```
-
+EstadoBoletim
+ 
 ### Classe Contexto
-```java
-public class BoletimProva {
-    private EstadoBoletim estado;
-    // métodos delegam para estado:
-    public void apresentarParaLargada() {
-        estado.apresentarParaLargada();
-    }
-    // ...
-}
-```
+BoletimProva 
 
 ### Estados Concretos
-```java
-public class PreProva implements EstadoBoletim {
-    public void apresentarParaLargada() {
-        // muda para MomentoDaLargada
-    }
-    public void registrarLargada() {
-        // lança exceção
-    }
-    public void registrarPassagem(...) { /* bloqueado */ }
-}
-```
-
-Outros estados implementam comportamentos válidos conforme a fase:
+Estados implementam comportamentos válidos conforme a fase:
+- `PreProva`
 - `MomentoDaLargada`
 - `Pista`
 - `PosProva`
