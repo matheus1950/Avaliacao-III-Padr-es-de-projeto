@@ -1,9 +1,10 @@
-package br.ifba.edu.aval.model;
+package br.ifba.edu.aval.state;
 
 import java.time.Duration;
 
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 import br.ifba.edu.aval.exception.AtividadeNaoPrecisaDeAlteracaoException;
+import br.ifba.edu.aval.model.BoletimProva;
 
 public class StateMomentoLargada implements StateProva {
 
@@ -31,4 +32,3 @@ public class StateMomentoLargada implements StateProva {
         throw new AtividadeNaoPermitidaException("Não pode registrar chegada no Momento da Largada.");
     }
 }
-

@@ -1,8 +1,9 @@
-package br.ifba.edu.aval.model;
+package br.ifba.edu.aval.state;
 
 import java.time.Duration;
 
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
+import br.ifba.edu.aval.model.BoletimProva;
 
 public class StatePreProva implements StateProva {
 

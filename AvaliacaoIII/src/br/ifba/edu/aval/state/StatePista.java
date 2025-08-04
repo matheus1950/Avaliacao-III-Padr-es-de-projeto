@@ -1,8 +1,10 @@
-package br.ifba.edu.aval.model;
+package br.ifba.edu.aval.state;
 
 import java.time.Duration;
 
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
+import br.ifba.edu.aval.model.BoletimProva;
+import br.ifba.edu.aval.model.Prisma;
 
 public class StatePista implements StateProva {
 
@@ -31,4 +33,3 @@ public class StatePista implements StateProva {
         boletim.setFaseAtual(new StatePosProva());
     }
 }
-
