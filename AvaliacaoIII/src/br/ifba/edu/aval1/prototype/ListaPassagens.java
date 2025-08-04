@@ -62,11 +62,11 @@ public class ListaPassagens implements Cloneable{
 	}
 
 	public void atualizarTempo(int numeroPrisma, Duration novoTempo) {
-    	for (TempoPassagem tp : this.tempos) {
-        	if (tp.prisma().numero() == numeroPrisma) {
-            	tp.setTempo(novoTempo);
-            	return;
-        	}
-    	}
+    		for (TempoPassagem tp : this.tempos) {
+        		if (tp.prisma().numero() == numeroPrisma) {
+            			tp.setTempo(novoTempo);
+            			return;
+        		}
+    		}
 	}
 }
