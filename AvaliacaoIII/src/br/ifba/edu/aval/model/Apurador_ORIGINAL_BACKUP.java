@@ -6,11 +6,11 @@ import java.util.List;
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 import br.ifba.edu.aval.exception.DNFException;
 
-public class Apurador {
+public class Apurador_ORIGINAL_BACKUP {
 	
 	private Duration tempoMaximo;
-	
-	public Apurador(Duration tempoMaximoProva) {
+
+	public Apurador_ORIGINAL_BACKUP(Duration tempoMaximoProva) {
 		this.tempoMaximo = tempoMaximoProva;
 	}
 	

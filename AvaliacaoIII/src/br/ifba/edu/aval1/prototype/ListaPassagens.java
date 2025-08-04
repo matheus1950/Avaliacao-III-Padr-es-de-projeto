@@ -60,10 +60,13 @@ public class ListaPassagens implements Cloneable{
 	public String toString() {
 		return "ListaPassagens [tempos=" + tempos + "]";
 	}
-	
-	
-	
-	
-	
-	
+
+	public void atualizarTempo(int numeroPrisma, Duration novoTempo) {
+    	for (TempoPassagem tp : this.tempos) {
+        	if (tp.prisma().numero() == numeroPrisma) {
+            	tp.setTempo(novoTempo);
+            	return;
+        	}
+    	}
+	}
 }

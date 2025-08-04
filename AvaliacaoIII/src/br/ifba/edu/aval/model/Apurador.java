@@ -3,8 +3,6 @@ package br.ifba.edu.aval.model;
 import java.time.Duration;
 
 import br.ifba.edu.aval.chain.RegraApuracao;
-import br.ifba.edu.aval.model.BoletimProva;
-import br.ifba.edu.aval.model.Prisma;
 import br.ifba.edu.aval.exception.DNFException;
 
 public class Apurador {

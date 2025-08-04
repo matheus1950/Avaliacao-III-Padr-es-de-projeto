@@ -2,6 +2,11 @@ package br.ifba.edu.aval;
 
 import java.time.Duration;
 
+import br.ifba.edu.aval.chain.RegraChegada;
+import br.ifba.edu.aval.chain.RegraOrdemPrismas;
+import br.ifba.edu.aval.chain.RegraPenalizaAtraso;
+import br.ifba.edu.aval.chain.RegraTempoMaximo;
+import br.ifba.edu.aval.chain.RegraTodosPrismas;
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 import br.ifba.edu.aval.exception.AtividadeNaoPrecisaDeAlteracaoException;
 import br.ifba.edu.aval.exception.DNFException;
@@ -13,7 +18,19 @@ public class AppAvaliacao3 extends AppAvaliacaoBase{
 	private Apurador apurador;
 	
 	public AppAvaliacao3() {
-		this.apurador = new Apurador(Duration.ofMinutes(120));
+		//this.apurador = new Apurador(Duration.ofMinutes(120));
+		RegraChegada r1 = new RegraChegada();
+		RegraTempoMaximo r2 = new RegraTempoMaximo(Duration.ofMinutes(120));
+		RegraOrdemPrismas r3 = new RegraOrdemPrismas();
+		RegraTodosPrismas r4 = new RegraTodosPrismas();
+		RegraPenalizaAtraso r5 = new RegraPenalizaAtraso();
+
+		r1.setProxima(r2);
+		r2.setProxima(r3);
+		r3.setProxima(r4);
+		r4.setProxima(r5);
+
+		this.apurador = new Apurador(r1);
 	}
 	
 	public void aval() throws AtividadeNaoPrecisaDeAlteracaoException {
@@ -76,11 +93,19 @@ public class AppAvaliacao3 extends AppAvaliacaoBase{
 			System.err.println("Atividade não permitida na corrida do " + atleta5.cboNumero() + ": " + e.getMessage());
 		}
 		System.out.println("******************************************");
+
+		System.out.println("**Corrida do Atleta6**");
+		try {
+			this.runAtleta6Aval3();
+			this.apurarBoletimProva(this.atleta6);
+		} catch (AtividadeNaoPermitidaException e) {
+			System.err.println("Atividade não permitida na corrida do " + atleta6.cboNumero() + ": " + e.getMessage());
+		}
 		
 	}
 	
 	
-	public void apurarBoletimProva(BoletimProva boletimProva) {
+/* 	public void apurarBoletimProva(BoletimProva boletimProva) {
 		System.out.println("*Apurando Atleta (" + boletimProva.cboNumero() + ") ********");
 		try {
 			System.out.println(apurador.apurar(boletimProva));
@@ -89,7 +114,16 @@ public class AppAvaliacao3 extends AppAvaliacaoBase{
 		} catch (AtividadeNaoPermitidaException e) {
 			System.err.println("Atividade não permitida na corrida do " + boletimProva.cboNumero() + ". Não é permitido apurar: " + e.getMessage());
 		}			
-	}
+	} */
+
+	public void apurarBoletimProva(BoletimProva boletimProva) {
+    System.out.println("*Apurando Atleta (" + boletimProva.cboNumero() + ") ********");
+    try {
+        System.out.println(apurador.apurar(boletimProva));
+    } catch (DNFException e) {
+        System.err.println(boletimProva.cboNumero() + " não concluiu - " + e.getMessage());
+    }
+}
 	
 	
 	

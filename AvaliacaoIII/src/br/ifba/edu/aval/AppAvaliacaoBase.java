@@ -23,6 +23,7 @@ public abstract class AppAvaliacaoBase {
 	protected BoletimProva atleta3;
 	protected BoletimProva atleta4;
 	protected BoletimProva atleta5;
+	protected BoletimProva atleta6; //cenário para testar regra de tempo máximo
 	
 	protected MapaBuilder mapaBuilder;
 	protected SinaleticaBuilder sinaleticaBuilder;	
@@ -115,7 +116,16 @@ public abstract class AppAvaliacaoBase {
 		this.atleta5.registrar(34, Duration.ofSeconds(160));
 		this.atleta5.registrarChegada(Duration.ofSeconds(175));
 	}	
-	
-	
 
+
+	// cenário para testar regra de tempo máximo
+	public void runAtleta6Aval3() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+		this.atleta6 = BoletimProvaFactory.instance().getBoletim("16000", Sexo.D, Idade.INFANTIL, Dificuldade.N, 15L);
+		this.atleta6.apresentarPraLargada();
+		this.atleta6.registrarLargada();
+		this.atleta6.registrar(31, Duration.ofMinutes(100));
+		this.atleta6.registrar(32, Duration.ofMinutes(110));
+		this.atleta6.registrar(33, Duration.ofMinutes(125));
+		this.atleta6.registrarChegada(Duration.ofMinutes(130)); // ultrapassa limite
+	}
 }

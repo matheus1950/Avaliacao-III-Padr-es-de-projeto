@@ -3,16 +3,20 @@ package br.ifba.edu.aval.chain;
 import java.time.Duration;
 
 import br.ifba.edu.aval.model.BoletimProva;
-import br.ifba.edu.aval.model.Prisma;
 import br.ifba.edu.aval.exception.DNFException;
 
 public class RegraPenalizaAtraso extends RegraApuracao {
     @Override
     public void aplicar(BoletimProva boletim) throws DNFException {
-        Duration atraso = boletim.getTempoAtraso();
-        if (atraso != null) {
-            Duration tempo = boletim.getTempo(Prisma.CHEGADA);
-            boletim.setTempo(Prisma.CHEGADA, tempo.plus(atraso));
+        try {
+            Long atrasoMinutos = boletim.getMinutosAtraso();
+            if (atrasoMinutos != null && atrasoMinutos > 0) {
+                Duration atraso = Duration.ofMinutes(atrasoMinutos);
+                boletim.adicionarAtrasoNaChegada(atraso);
+                System.out.println(boletim.cboNumero() + " penalizado com " + atraso.toMinutes() + " minutos de atraso");
+            }
+        } catch (Exception e) {
+            throw new DNFException("Erro ao aplicar penalização de atraso: " + e.getMessage());
         }
         super.aplicar(boletim);
     }

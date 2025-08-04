@@ -72,6 +72,11 @@ public class BoletimProva {
 	public void setFaseAtual(StateProva faseAtual) {
 		this.faseAtual = faseAtual;
 	}	
-	
-	
+
+	public void adicionarAtrasoNaChegada(Duration atraso) {
+    	Duration chegada = this.getTempo(Prisma.CHEGADA);
+    	if (chegada != null && atraso != null && !atraso.isZero()) {
+        	this.passagens.atualizarTempo(Prisma.CHEGADA, chegada.plus(atraso));
+    	}
+	}
 }
