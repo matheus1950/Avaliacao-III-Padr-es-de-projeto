@@ -3,7 +3,6 @@ package br.ifba.edu.aval;
 import java.time.Duration;
 
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
-import br.ifba.edu.aval.exception.AtividadeNaoPrecisaDeAlteracaoException;
 import br.ifba.edu.aval.model.BoletimProva;
 import br.ifba.edu.aval.model.Dificuldade;
 import br.ifba.edu.aval.model.Idade;
@@ -30,7 +29,7 @@ public abstract class AppAvaliacaoBase {
 	protected ListaPassagensBuilder listaPassagensBuilder;
 	protected OrientacaoDirector director;
 	
-	public abstract void aval() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException;
+	public abstract void aval() throws AtividadeNaoPermitidaException;
 	
 	public AppAvaliacaoBase() {
 		this.director = new OrientacaoDirector();
@@ -57,7 +56,7 @@ public abstract class AppAvaliacaoBase {
 		this.listaPassagensBuilder.make();
 	}
 	
-	public void runAtleta1Aval1() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public void runAtleta1Aval1() throws AtividadeNaoPermitidaException {
 
 		this.atleta1 = BoletimProvaFactory.instance().getBoletim("12000", Sexo.D, Idade.INFANTIL, Dificuldade.N, 10L);
 		this.atleta1.apresentarPraLargada();
@@ -68,7 +67,7 @@ public abstract class AppAvaliacaoBase {
 		this.atleta1.registrar(34, Duration.ofSeconds(190));
 	}
 	
-	public void runAtleta2Aval1() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public void runAtleta2Aval1() throws AtividadeNaoPermitidaException {
 		this.atleta2 = BoletimProvaFactory.instance().getBoletim("13000", Sexo.D, Idade.INFANTIL, Dificuldade.N, 11L);
 		this.atleta2.apresentarPraLargada();
 		this.atleta2.registrarLargada();
@@ -89,7 +88,7 @@ public abstract class AppAvaliacaoBase {
 		this.atleta3.registrarChegada(Duration.ofSeconds(200));
 	}
 	
-	public void runAtleta4Aval3() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public void runAtleta4Aval3() throws AtividadeNaoPermitidaException {
 		this.atleta4 = BoletimProvaFactory.instance().getBoletim("15000", Sexo.D, Idade.INFANTIL, Dificuldade.N, 13L);
 		this.atleta4.apresentarPraLargada();
 		this.atleta4.registrarAtrasoPartida(14L);
@@ -106,7 +105,7 @@ public abstract class AppAvaliacaoBase {
 		this.atleta4.registrarChegada(Duration.ofSeconds(365));
 	}
 	
-	public void runAtleta5Aval3() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public void runAtleta5Aval3() throws AtividadeNaoPermitidaException {
 		this.atleta5 = BoletimProvaFactory.instance().getBoletim("15000", Sexo.D, Idade.INFANTIL, Dificuldade.N, 14L);
 		this.atleta5.apresentarPraLargada();
 		this.atleta5.registrarLargada();
@@ -119,7 +118,7 @@ public abstract class AppAvaliacaoBase {
 
 
 	// cenário para testar regra de tempo máximo
-	public void runAtleta6Aval3() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public void runAtleta6Aval3() throws AtividadeNaoPermitidaException {
 		this.atleta6 = BoletimProvaFactory.instance().getBoletim("16000", Sexo.D, Idade.INFANTIL, Dificuldade.N, 15L);
 		this.atleta6.apresentarPraLargada();
 		this.atleta6.registrarLargada();

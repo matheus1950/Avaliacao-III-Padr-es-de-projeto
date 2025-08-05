@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
-import br.ifba.edu.aval.exception.AtividadeNaoPrecisaDeAlteracaoException;
 
 public class AppAvaliacaoFront {
 	
@@ -18,12 +17,12 @@ public class AppAvaliacaoFront {
 	}
 	
 	
-	public void run() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException{
+	public void run() throws AtividadeNaoPermitidaException{
 		for(AppAvaliacaoBase avaliacao : this.avaliacoes)
 			avaliacao.aval();
 	}
 	
-	public static void main(String[] args) throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException{
+	public static void main(String[] args) throws AtividadeNaoPermitidaException{
 		new AppAvaliacaoFront().run();
 	}
 

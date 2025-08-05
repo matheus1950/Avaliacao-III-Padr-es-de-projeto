@@ -8,7 +8,6 @@ import br.ifba.edu.aval.chain.RegraPenalizaAtraso;
 import br.ifba.edu.aval.chain.RegraTempoMaximo;
 import br.ifba.edu.aval.chain.RegraTodosPrismas;
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
-import br.ifba.edu.aval.exception.AtividadeNaoPrecisaDeAlteracaoException;
 import br.ifba.edu.aval.exception.DNFException;
 import br.ifba.edu.aval.model.Apurador;
 import br.ifba.edu.aval.model.BoletimProva;
@@ -33,14 +32,14 @@ public class AppAvaliacao3 extends AppAvaliacaoBase{
 		this.apurador = new Apurador(r1);
 	}
 	
-	public void aval() throws AtividadeNaoPrecisaDeAlteracaoException {
+	public void aval() {
 		System.out.println("* AVALIAÇÃO III **************************");
 		this.questao1();
 		System.out.println("******************************************");
 		this.questao2();
 	}
 
-	public void questao1() throws AtividadeNaoPrecisaDeAlteracaoException {
+	public void questao1() {
 		System.out.println("QUESTÃO 1");
 		this.makeBoletinsProva();
 		try {
@@ -51,7 +50,7 @@ public class AppAvaliacao3 extends AppAvaliacaoBase{
 		}		
 	}
 	
-	public void questao2() throws AtividadeNaoPrecisaDeAlteracaoException {
+	public void questao2() {
 		System.out.println("QUESTÃO 2");
 		this.makeBoletinsProva();
 		System.out.println("**Corrida do Atleta1**");
@@ -103,18 +102,6 @@ public class AppAvaliacao3 extends AppAvaliacaoBase{
 		}
 		
 	}
-	
-	
-/* 	public void apurarBoletimProva(BoletimProva boletimProva) {
-		System.out.println("*Apurando Atleta (" + boletimProva.cboNumero() + ") ********");
-		try {
-			System.out.println(apurador.apurar(boletimProva));
-		} catch (DNFException e) {
-			System.err.println(boletimProva.cboNumero() + " não concluiu - " + e.getMessage());
-		} catch (AtividadeNaoPermitidaException e) {
-			System.err.println("Atividade não permitida na corrida do " + boletimProva.cboNumero() + ". Não é permitido apurar: " + e.getMessage());
-		}			
-	} */
 
 	public void apurarBoletimProva(BoletimProva boletimProva) {
     System.out.println("*Apurando Atleta (" + boletimProva.cboNumero() + ") ********");
@@ -127,7 +114,7 @@ public class AppAvaliacao3 extends AppAvaliacaoBase{
 	
 	
 	
-	public static void main(String[] args) throws AtividadeNaoPrecisaDeAlteracaoException {
+	public static void main(String[] args)  {
 		new AppAvaliacao3().aval();
 	}
 

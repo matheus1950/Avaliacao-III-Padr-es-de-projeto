@@ -1,13 +1,12 @@
 package br.ifba.edu.aval;
 
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
-import br.ifba.edu.aval.exception.AtividadeNaoPrecisaDeAlteracaoException;
 import br.ifba.edu.aval.model.Mapa;
 import br.ifba.edu.aval.model.Sinaletica;
 
 public class AppAvaliacao1 extends AppAvaliacaoBase{
 	
-	public void aval() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public void aval() throws AtividadeNaoPermitidaException{
 		System.out.println("* AVALIAÇÃO I ****************************");
 		this.questao1();
 		this.questao2();
@@ -27,7 +26,7 @@ public class AppAvaliacao1 extends AppAvaliacaoBase{
 		System.out.println("******************************************");
 	}
 	
-	public void questao2() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public void questao2() throws AtividadeNaoPermitidaException{
 		System.out.println("******************************************");
 		System.out.println("QUESTÃO 2");
 		System.out.println("******************************************");
@@ -41,7 +40,7 @@ public class AppAvaliacao1 extends AppAvaliacaoBase{
 		System.out.println("******************************************");
 	};
 	
-	public static void main(String[] args) throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public static void main(String[] args) throws AtividadeNaoPermitidaException{
 		new AppAvaliacao1().aval();
 	}
 

@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.List;
 
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
-import br.ifba.edu.aval.exception.AtividadeNaoPrecisaDeAlteracaoException;
 import br.ifba.edu.aval.state.StateProva;
 import br.ifba.edu.aval.state.StatePreProva;
 import br.ifba.edu.aval1.prototype.ListaPassagens;
@@ -57,7 +56,7 @@ public class BoletimProva {
 	    return this.faseAtual.getMinutosAtraso(this);
 	}
 
-	public void apresentarPraLargada() throws AtividadeNaoPermitidaException, AtividadeNaoPrecisaDeAlteracaoException {
+	public void apresentarPraLargada() throws AtividadeNaoPermitidaException{
 	    this.faseAtual.apresentarPraLargada(this);
 	}
 
