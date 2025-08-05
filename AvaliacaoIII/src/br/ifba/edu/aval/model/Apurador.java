@@ -3,6 +3,7 @@ package br.ifba.edu.aval.model;
 import java.time.Duration;
 
 import br.ifba.edu.aval.chain.RegraApuracao;
+import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 import br.ifba.edu.aval.exception.DNFException;
 
 public class Apurador {
@@ -12,7 +13,7 @@ public class Apurador {
         this.regraInicial = regraInicial;
     }
 
-    public Duration apurar(BoletimProva boletim) throws DNFException {
+    public Duration apurar(BoletimProva boletim) throws DNFException, AtividadeNaoPermitidaException {
         regraInicial.aplicar(boletim);
         return boletim.getTempo(Prisma.CHEGADA);
     }

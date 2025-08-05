@@ -102,17 +102,18 @@ public class AppAvaliacao3 extends AppAvaliacaoBase{
 		}
 		
 	}
-
+	
 	public void apurarBoletimProva(BoletimProva boletimProva) {
-    System.out.println("*Apurando Atleta (" + boletimProva.cboNumero() + ") ********");
-    try {
-        System.out.println(apurador.apurar(boletimProva));
-    } catch (DNFException e) {
-        System.err.println(boletimProva.cboNumero() + " não concluiu - " + e.getMessage());
-    }
-}
-	
-	
+		System.out.println("*Apurando Atleta (" + boletimProva.cboNumero() + ") ********");
+		try {
+			System.out.println(apurador.apurar(boletimProva));
+		} catch (DNFException e) {
+			System.err.println(boletimProva.cboNumero() + " não concluiu - " + e.getMessage());
+		} catch (AtividadeNaoPermitidaException e) {
+			System.err.println("Atividade não permitida na corrida do " + boletimProva.cboNumero() + ". Não é permitido apurar: " + e.getMessage());
+		}			
+	}
+
 	
 	public static void main(String[] args)  {
 		new AppAvaliacao3().aval();
